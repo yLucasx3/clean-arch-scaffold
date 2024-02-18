@@ -1,0 +1,44 @@
+{
+  "name": "clean-arch-scaffold",
+  "version": "1.0.0",
+  "description": "This project is a scaffold of an common API. You can use it to build an API without concern about architeture, infra, best tools, docker configuration, git setup, debugger, documentation and etc.",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "",
+    "dev": "npx nodemon src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yLucasx3/clean-arch-scaffold.git"
+  },
+  "keywords": [
+    "clean-arch",
+    "clean",
+    "architecture",
+    "clean-architecture",
+    "api",
+    "common-api",
+    "scaffold",
+    "template api",
+    "template"
+  ],
+  "author": "Lucas Ariel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yLucasx3/clean-arch-scaffold/issues"
+  },
+  "homepage": "https://github.com/yLucasx3/clean-arch-scaffold#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "^8.56.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.19",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
