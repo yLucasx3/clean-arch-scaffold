@@ -1,7 +1,7 @@
 import { Foo, FooProps } from "@/domain/entities/foo.entity";
 import { IFooRepository } from "@/domain/repositories/foo.repository";
 
-export class FooRepository implements IFooRepository {
+export class InMemoryFooRepository implements IFooRepository {
   public foos: Foo[] = [];
 
   show(id: number): Promise<Foo | null> {
@@ -16,11 +16,18 @@ export class FooRepository implements IFooRepository {
   }
 
   update(id: number, foo: Partial<FooProps>): Promise<Foo> {
-    return Promise.resolve(new Foo({ bar: foo.bar! }));
+    const fooToUpdateIndex = this.foos.findIndex((foo) => foo.id === id);
+
+    if (fooToUpdateIndex > -1) {
+      Object.assign(this.foos[fooToUpdateIndex], foo);
+    }
+
+    return Promise.resolve(this.foos[fooToUpdateIndex]);
   }
 
   delete(id: number): Promise<void> {
-    id;
+    this.foos = this.foos.filter((foo) => foo.id !== id);
+
     return Promise.resolve();
   }
 }

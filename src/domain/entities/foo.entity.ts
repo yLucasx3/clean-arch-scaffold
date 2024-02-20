@@ -9,7 +9,7 @@ export class Foo implements FooProps {
 
   constructor(fooProps?: FooProps) {
     if (fooProps) {
-      Object.assign(fooProps, this);
+      Object.assign(this, fooProps);
     }
   }
 
