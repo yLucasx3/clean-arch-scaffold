@@ -1,6 +1,6 @@
 import { CreateFooController } from "@/adapters/controllers/http/foo/create-foo.controller";
 import { CreateFooUseCase } from "@/useCases/foo/create-foo.usecase";
-import { PostgreFooRepository } from "../database/repositories/postgre/postgre-foo.repository";
+import { PostgreFooRepository } from "../database/repositories/postgresql/postgresql-foo.repository";
 
 const createFooRepository = new PostgreFooRepository();
 const createFooUseCase = new CreateFooUseCase(createFooRepository);

@@ -2,10 +2,12 @@ import { Foo, FooProps } from "@/domain/entities/foo.entity";
 import { IFooRepository } from "@/domain/repositories/foo.repository";
 
 export class InMemoryFooRepository implements IFooRepository {
-  public foos: Foo[] = [];
+  foos = new Array<FooProps>();
 
   show(id: number): Promise<Foo | null> {
-    return Promise.resolve(this.foos.find((foo) => foo.id == id) || null);
+    const foo = this.foos.find((foo) => foo.id == id);
+
+    return Promise.resolve(new Foo(foo) || null);
   }
 
   create(foo: FooProps): Promise<Foo> {
@@ -22,7 +24,7 @@ export class InMemoryFooRepository implements IFooRepository {
       Object.assign(this.foos[fooToUpdateIndex], foo);
     }
 
-    return Promise.resolve(this.foos[fooToUpdateIndex]);
+    return Promise.resolve(new Foo(this.foos[fooToUpdateIndex]));
   }
 
   delete(id: number): Promise<void> {

@@ -1,6 +1,7 @@
 import express, { Router } from "express";
 import cors from "cors";
 import fooRoute from "./routes/foo.route";
+import docsRoutes from "./routes/docs.routes";
 
 const app = express();
 
@@ -9,10 +10,13 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cors());
 
-const router = Router();
+const apiRouter = Router();
+fooRoute(apiRouter);
 
-fooRoute(router);
+const docsRouter = Router();
+docsRoutes(docsRouter);
 
-app.use("/api", router);
+app.use("/api", apiRouter);
+app.use(docsRouter);
 
 export { app };
