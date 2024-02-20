@@ -4,9 +4,9 @@
   "description": "This project is a scaffold of an common API. You can use it to build an API without concern about architeture, infra, best tools, docker configuration, git setup, debugger, documentation and etc.",
   "main": "dist/server.js",
   "scripts": {
-    "test": "",
+    "dev": "nodemon",
     "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/server.js",
-    "dev": "nodemon"
+    "build": "tsc"
   },
   "nodemonConfig": {
     "ignore": [
