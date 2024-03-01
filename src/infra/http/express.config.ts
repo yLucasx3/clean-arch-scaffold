@@ -16,6 +16,8 @@ fooRoute(apiRouter);
 const docsRouter = Router();
 docsRoutes(docsRouter);
 
+app.get("/", (_req, response) => response.send("Welcome to Clean Architecture Scaffold!"));
+
 app.use("/api", apiRouter);
 app.use(docsRouter);
 
