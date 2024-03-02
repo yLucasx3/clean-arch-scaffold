@@ -15,9 +15,13 @@
 	// This can be used to network with other containers or with the host.
 	// "forwardPorts": [3000, 5432],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash scrips/install-dependencies.sh"
+	"postCreateCommand": "bash scrips/install-dependencies.sh",
 	// Configure tool-specific properties.
-	// "customizations": {},
+	"customizations": {
+		"extensions": [
+			"Prisma.prisma"
+		]
+	}
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
