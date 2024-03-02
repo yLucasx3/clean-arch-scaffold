@@ -14,6 +14,9 @@ datasource db {
 }
 
 model Foo {
-  id  Int    @id @default(autoincrement())
-  bar String
+  id                String @id @default(uuid())
+  bar               String
+  validationExample String
+
+  @@map("foos")
 }

@@ -1,8 +1,8 @@
-import { Foo, FooProps } from "../entities/foo.entity";
+import { Foo, IFooProps } from "../entities/foo.entity";
 
 export interface IFooRepository {
-  show(id: number): Promise<Foo | null>;
-  create(foo: FooProps): Promise<Foo>;
-  update(id: number, foo: Partial<FooProps>): Promise<Foo>;
-  delete(id: number): Promise<void>;
+  show(id: string): Promise<Foo | null>;
+  create(foo: IFooProps): Promise<Foo>;
+  update(id: string, foo: Partial<IFooProps>): Promise<Foo>;
+  delete(id: string): Promise<void>;
 }

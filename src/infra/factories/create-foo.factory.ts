@@ -1,8 +1,8 @@
 import { CreateFooController } from "@/adapters/controllers/http/foo/create-foo.controller";
 import { CreateFooUseCase } from "@/useCases/foo/create-foo.usecase";
-import { PostgreFooRepository } from "../database/repositories/postgresql/postgresql-foo.repository";
+import { PrismaFooRepository } from "../database/repositories/prisma/prisma-foo.repository";
 
-const createFooRepository = new PostgreFooRepository();
+const createFooRepository = new PrismaFooRepository();
 const createFooUseCase = new CreateFooUseCase(createFooRepository);
 const createFooFactory = new CreateFooController(createFooUseCase);
 
